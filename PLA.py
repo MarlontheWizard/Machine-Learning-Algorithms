@@ -2,7 +2,8 @@
 #Machine Learning/Rutgers University 
 
 """
-EXPLANATION AND THOUGHTS
+                        EXPLANATION AND THOUGHTS
+                        
 The PLA algorithm is simple, apply weights to the data (perceptrons) and 
 if the perfect line/boundary/linear separation is not found then modify 
 the weights and do the process again. Since there are 14 values for each 
