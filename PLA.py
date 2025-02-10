@@ -1,6 +1,30 @@
 #Author: Marlon Dominguez
 #Machine Learning/Rutgers University 
 
+"""
+EXPLANATION AND THOUGHTS
+The PLA algorithm is simple, apply weights to the data (perceptrons) and 
+if the perfect line/boundary/linear separation is not found then modify 
+the weights and do the process again. Since there are 14 values for each 
+feature and label, we iterate through each of these values until we have 
+found the perfect line (once successful is true in my code). Instead of 
+numpy I use matplotlib to draw the hyperplane and separating line. I 
+converted the “no” values to -1 in the Label array to satisfy PLA.
+Something very interesting that I noticed is that, at first, I tried to 
+implement the PLA without a learning rate (an additional constant applied 
+to the weight) and ended up with 0 for one of the weights (specifically x2_weight). 
+I found that when the resulting weight is 0 after the PLA, the separable line 
+doesn’t exist, and I additionally get a division by zero error when using the 
+boundary line expression/formula. However, applying a low learning rate (such as 0.1)
+allowed my separable line to be perfect and avoided the weights resulting to 0. However, 
+this meant that x1 and x2 would be near 0 as well. This tells me that the separating line 
+is super dependent on the learning rate. Otherwise, without the learning rate, I would not 
+be able to achieve a correct seperable line. Does this imply that the data isn’t totally 
+linear seperable? I am leaning to think so. I am sure I calculated and modified the weights 
+correctly, yet I am only able to get the separating line with a very small learning rate 
+(another constant applied to the weight).
+"""
+
 import matplotlib.pyplot as plt
 
 print("PLA Algorithm")
